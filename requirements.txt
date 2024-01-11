@@ -20,7 +20,7 @@ idna==2.9
 inflection==0.4.0
 isapi-wsgi==0.4.2
 itypes==1.2.0
-Jinja2==2.11.2
+Jinja2==3.1.3
 MarkupSafe==1.1.1
 nose==1.3.7
 oauthlib==3.1.0
