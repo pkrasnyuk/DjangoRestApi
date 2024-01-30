@@ -7,13 +7,13 @@ import api.helpers.image_helper
 
 class Migration(migrations.Migration):
     dependencies = [
-        ('api', '0006_uploadimage_thumbnail_image'),
+        ("api", "0006_uploadimage_thumbnail_image"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='uploadimage',
-            name='thumbnail_image',
+            model_name="uploadimage",
+            name="thumbnail_image",
             field=models.ImageField(blank=True, max_length=300, null=True, upload_to=api.helpers.image_helper.nameFile),
         ),
     ]

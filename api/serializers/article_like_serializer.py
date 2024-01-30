@@ -14,16 +14,16 @@ class ArticleLikeSerializer(serializers.ModelSerializer):
 
     def to_representation(self, instance):
         representation = super().to_representation(instance)
-        representation['like'] = UserSerializer(instance.like).data
-        representation['article'] = ArticleSerializer(instance.article).data
+        representation["like"] = UserSerializer(instance.like).data
+        representation["article"] = ArticleSerializer(instance.article).data
         return representation
 
     class Meta:
         model = ArticleLike
-        fields = ('article', 'like', 'comment', 'created_at', 'modified_at')
-        read_only_fields = ('created_at', 'modified_at')
+        fields = ("article", "like", "comment", "created_at", "modified_at")
+        read_only_fields = ("created_at", "modified_at")
         extra_kwargs = {
-            'article': {'default': serializers.CurrentUserDefault()},
-            'like': {'default': serializers.CurrentUserDefault()},
-            'comment': {'help_text': 'comment serializer help_text'}
+            "article": {"default": serializers.CurrentUserDefault()},
+            "like": {"default": serializers.CurrentUserDefault()},
+            "comment": {"help_text": "comment serializer help_text"},
         }

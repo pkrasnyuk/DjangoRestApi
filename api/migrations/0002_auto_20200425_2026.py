@@ -5,16 +5,16 @@ from django.db import migrations
 
 class Migration(migrations.Migration):
     dependencies = [
-        ('api', '0001_initial'),
+        ("api", "0001_initial"),
     ]
 
     operations = [
         migrations.AlterModelOptions(
-            name='article',
-            options={'ordering': ('id',)},
+            name="article",
+            options={"ordering": ("id",)},
         ),
         migrations.AlterModelOptions(
-            name='articlelike',
-            options={'ordering': ('id',)},
+            name="articlelike",
+            options={"ordering": ("id",)},
         ),
     ]

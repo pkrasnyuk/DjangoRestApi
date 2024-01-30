@@ -8,32 +8,38 @@ import api.helpers.validators
 
 class Migration(migrations.Migration):
     dependencies = [
-        ('api', '0003_snippet'),
+        ("api", "0003_snippet"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='article',
-            name='body',
-            field=models.TextField(help_text='article model help_text', max_length=2048,
-                                   validators=[django.core.validators.MinLengthValidator(15)]),
+            model_name="article",
+            name="body",
+            field=models.TextField(
+                help_text="article model help_text",
+                max_length=2048,
+                validators=[django.core.validators.MinLengthValidator(15)],
+            ),
         ),
         migrations.AlterField(
-            model_name='article',
-            name='title',
-            field=models.CharField(help_text='title model help_text', max_length=255,
-                                   validators=[api.helpers.validators.alphanumeric,
-                                               django.core.validators.MinLengthValidator(10)]),
+            model_name="article",
+            name="title",
+            field=models.CharField(
+                help_text="title model help_text",
+                max_length=255,
+                validators=[api.helpers.validators.alphanumeric, django.core.validators.MinLengthValidator(10)],
+            ),
         ),
         migrations.AlterField(
-            model_name='articlelike',
-            name='comment',
+            model_name="articlelike",
+            name="comment",
             field=models.TextField(blank=True, null=True, validators=[api.helpers.validators.alphanumeric]),
         ),
         migrations.AlterField(
-            model_name='snippet',
-            name='title',
-            field=models.CharField(blank=True, default='', max_length=100,
-                                   validators=[api.helpers.validators.alphanumeric]),
+            model_name="snippet",
+            name="title",
+            field=models.CharField(
+                blank=True, default="", max_length=100, validators=[api.helpers.validators.alphanumeric]
+            ),
         ),
     ]

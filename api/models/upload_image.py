@@ -1,10 +1,10 @@
 import os
 from io import BytesIO
 
-from PIL import Image
 from django.core.files.uploadedfile import InMemoryUploadedFile
 from django.db import models
 from django_cleanup import cleanup
+from PIL import Image
 
 from api.helpers.image_helper import nameFile
 from api.models.base_model import BaseModel
@@ -27,15 +27,16 @@ class UploadImage(BaseModel):
             image_file = BytesIO()
             image.save(image_file, image.format)
             self.thumbnail_image.save(
-                f'{file_name}_{w}x{h}{ext}',
+                f"{file_name}_{w}x{h}{ext}",
                 InMemoryUploadedFile(
                     image_file,
-                    None, '',
+                    None,
+                    "",
                     self.image.file.content_type,
                     image.size,
                     self.image.file.charset,
                 ),
-                save=False
+                save=False,
             )
 
     def save(self, *args, **kwargs):
@@ -44,4 +45,4 @@ class UploadImage(BaseModel):
         super().save(*args, **kwargs)
 
     class Meta:
-        ordering = ('id',)
+        ordering = ("id",)

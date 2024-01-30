@@ -7,22 +7,26 @@ import api.helpers.image_helper
 
 class Migration(migrations.Migration):
     dependencies = [
-        ('api', '0004_auto_20200430_1447'),
+        ("api", "0004_auto_20200430_1447"),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='UploadImage',
+            name="UploadImage",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('created_at', models.DateTimeField(auto_now_add=True)),
-                ('modified_at', models.DateTimeField(auto_now=True)),
-                ('name', models.CharField(max_length=100)),
-                ('image', models.ImageField(blank=True, max_length=254, null=True,
-                                            upload_to=api.helpers.image_helper.nameFile)),
+                ("id", models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name="ID")),
+                ("created_at", models.DateTimeField(auto_now_add=True)),
+                ("modified_at", models.DateTimeField(auto_now=True)),
+                ("name", models.CharField(max_length=100)),
+                (
+                    "image",
+                    models.ImageField(
+                        blank=True, max_length=254, null=True, upload_to=api.helpers.image_helper.nameFile
+                    ),
+                ),
             ],
             options={
-                'ordering': ('id',),
+                "ordering": ("id",),
             },
         ),
     ]

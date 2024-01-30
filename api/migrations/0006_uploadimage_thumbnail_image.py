@@ -5,13 +5,13 @@ from django.db import migrations, models
 
 class Migration(migrations.Migration):
     dependencies = [
-        ('api', '0005_uploadimage'),
+        ("api", "0005_uploadimage"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='uploadimage',
-            name='thumbnail_image',
+            model_name="uploadimage",
+            name="thumbnail_image",
             field=models.CharField(blank=True, max_length=300, null=True),
         ),
     ]
